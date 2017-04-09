@@ -31,7 +31,7 @@
         <link rel="stylesheet" href="assets/style.css" />
         <script src="assets/script.js"></script>
     </head>
-    <body onload='javascript:loadNumber();'>
+    <body>
 
 
 
@@ -62,6 +62,13 @@
                 <div id="header_subtitle"><h2 class="blue">L'élection présidentielle au <span>Jugement Majoritaire</span></h2></div>
                 <div style="text-align:center;"><a class="btn btn-rosy" id="participer" href="#boutons-wrap" >Participer</a> &nbsp;&nbsp;
                 <span class="btn btn-blue" id='nb_participants'>Déjà &nbsp; participants&nbsp;!</span>
+                <script>
+                $.ajax({
+                  url:"https://api.democratech.co/v1/payment/candidate/663402096368",
+                  dataType: "json",
+                  success: function(data) {$('#nb_participants').html("Déjà " + data.total + " participants !");}
+                });
+                </script>
             </div>
             </div>
         </header>
