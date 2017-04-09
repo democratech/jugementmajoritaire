@@ -24,240 +24,17 @@
         <meta name="twitter:image" content="https://s3.eu-west-2.amazonaws.com/www.jugementmajoritaire2017.com/images/banner-fb.jpg">
         <meta name="twitter:description" content="Et si on changeait de mode de scrutin ? Le Jugement Majoritaire est un mode de scrutin inventé par 2 chercheurs français permettant aux votants d'exprimer leur préférences de manière fidèle sur les choix proposés.">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css"/>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
         <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
         <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
         <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js" type="text/javascript"></script>
-        <style>
-            html, body {
-                height:100%;
-                font-family: 'Montserrat', sans-serif;
-            }
-            .rosy-background {
-                background-color:#ff434c;
-                color:white;
-            }
-            .rosy {
-                color:#ff434c;
-            }
-            .blue-background {
-                background-color:#1065b4;
-                color:white;
-            }
-            .blue {
-                color:#1065b4;
-            }
-            .grey-light-background {
-                background-color:#eeeeed;
-            }
-            .grey-dark-background {
-                background-color:#bbb8b7;
-                color:white;
-            }
-            .grey-dark {
-                color:#aba8a7;
-            }
-            .yellow {
-                color:#fab702;
-            }
-            #flag {
-                width:55px;
-                margin:0 auto;
-                margin-bottom:30px;
-            }
-            #header_title {
-                font-variant: small-caps;
-                text-align: center;
-                margin:0 auto;
-                font-size:26px;
-                font-weight: normal;
-                text-align: center;
-                margin-bottom:15px;
-            }
-            #sponsors {
-                width:70%;
-                margin: 0 auto;
-                text-align: center;
-            }
-            #sponsors ul li {
-                display: inline-block;
-            }
-            #foule {
-                width:100%;
-                margin: 0 auto;
-                text-align: center;
-            }
-            #header_question span {
-                padding:6px 30px 10px 30px;
-                line-height:1.7em;
-            }
-            #header_question h1 {
-                font-size:34px;
-                font-weight: normal;
-                padding:0px;
-                margin:0px;
-            }
-            #header_question {
-                font-variant: small-caps;
-                color: white;
-                margin:0 auto;
-                text-align: center;
-                margin-bottom:15px;
-                padding:2px;
-            }
-            @media (max-width: 1000px) {
-                #header_question h1 span {
-                       line-height:1.2em;
-                }
-                #header_question h1 {
-                    font-size:32px;
-                    background-color:#ff434c;
-                    padding:10px;
-                }
-                
-            }
-            #header_subtitle span {
-                font-weight: bold;
-            }
-            #header_subtitle h2 {
-                font-size:24px;
-            }
-            #header_subtitle {
-                text-align: center;
-                margin: 30px auto;
-            }
-            #explication h3 {
-                font-size:20px;
-                text-align:center;
-            }
-            #explication-wrap {
-                width:60%;
-                margin:0 auto;
-            }
-            #explication {
-                padding: 30px 0px;
-                color:white;
-                line-height: 23px;
-            }
-            #a_vous_voter p {
-                text-align:center;
-            }
-            #a_vous_voter h3 {
-                font-variant: small-caps;
-                font-size:38px;
-                text-align:center;
-            }
-            #a_vous_voter {
-                padding: 30px 0px;
-            }
-            #remerciements h3 {
-                font-variant: small-caps;
-                font-size:24px;
-                text-align: center;
-            }
-            #remerciements a {
-                color:white;
-                text-decoration: underline;
-            }
-            #remerciements p {
-                text-align: center;
-            }
-            #remerciements {
-                padding: 30px 0px;
-            }
-            #kit_presse {
-                padding: 30px 0px;
-            }
-            .point {
-                font-size:30px;
-                font-weight: bold;
-                text-align: center;
-            }
-            #avec_facebook:hover {
-                background-color:#ff030c;
-                cursor:pointer;
-                color:white;
-            }
-            #avec_facebook span {
-                font-size:17px;
-                font-weight:normal;
-            }
-            #avec_facebook {
-                padding:10px;
-                font-size:24px;
-                font-weight:bold;
-                border:2px solid #ff434c;
-                width:250px;
-                text-align: center;
-                margin:0 auto;
-            }
-            #avec_laprimaire span {
-                font-size:17px;
-                font-weight:normal;
-            }
-            #avec_laprimaire:hover {
-                background-color:#ff434c;
-                color:white;
-                cursor: pointer;
-            }
-            #avec_laprimaire {
-                color: #ff434c;
-                padding:10px;
-                font-size:24px;
-                font-weight:bold;
-                border:2px solid #ff434c;
-                width:250px;
-                text-align:center;
-                margin:0 auto;
-            }
-            #kit_presse_btn {
-                color: white;
-                padding:10px;
-                font-size:20px;
-                font-weight:bold;
-                border:2px solid white;
-                width:250px;
-                text-align:center;
-                margin:0 auto;
-            }
-            #bd h3 {
-                font-variant: small-caps;
-                font-size:38px;
-                text-align: center;
-            }
-            #lechoixcommun span {
-                font-weight: normal;
-                font-size:17px;
-            }
-            #lechoixcommun {
-                color: #fab702;
-                padding:10px;
-                font-size:20px;
-                font-weight:bold;
-                border:2px solid #fab702;
-                width:250px;
-                text-align:center;
-                margin:20px auto;
-            }
-            #participer:hover {
-                background-color:#ff434c;
-                color:white;
-                cursor: pointer;
-            }
-            #participer {
-                color: #ff434c;
-                background-color:white;
-                padding:10px;
-                font-size:24px;
-                font-weight:bold;
-                border:2px solid #ff434c;
-                width:250px;
-                text-align:center;
-                margin:0 auto;
-                margin-bottom:40px;
-            }
-        </style>
+        <link rel="stylesheet" href="assets/style.css" />
+        <script src="assets/script.js"></script>
     </head>
-    <body>
+    <body onload='javascript:loadNumber();'>
+
+
+
         <div id="flag"><img width="60px" src="https://s3.eu-west-2.amazonaws.com/www.jugementmajoritaire2017.com/images/JM2017-drapeau-01.svg"></div>
         <header>
             <div class="container">
@@ -283,37 +60,112 @@
                 </div>
                 <div id="header_question"><h1><span class="rosy-background">et si on expérimentait un nouveau mode de scrutin&nbsp;?</span></h1></div>
                 <div id="header_subtitle"><h2 class="blue">L'élection présidentielle au <span>Jugement Majoritaire</span></h2></div>
-                <div style="text-align:center;"><a class="btn" id="participer" href="#boutons-wrap" style="border-radius:0px;">Participer</a></div>
+                <div style="text-align:center;"><a class="btn btn-rosy" id="participer" href="#boutons-wrap" >Participer</a> &nbsp;&nbsp;
+                <span class="btn btn-blue" id='nb_participants'>Déjà &nbsp; participants&nbsp;!</span>
+            </div>
             </div>
         </header>
         <section id="explication" class="blue-background">
-            <div class="container">
-                <div id="explication-wrap">
-                    <h3 style="text-align:center;">Qu'est-ce qu'un mode de scrutin ?</h3>
-                    <p>Le mode de scrutin, c'est le système de vote par lequel on désigne le gagnant d'une élection. L'élection présidentielle française, comme la grande majorité des élections actuelles, utilise un mode de scrutin qu'on appelle "majoritaire" qui consiste à sélectionner un candidat parmi plusieurs et le candidat ayant le plus de voix remporte l'élection. Le problème c'est que ce mode de scrutin souffre de nombreux défauts scientifiquement connus depuis plusieurs siècles, notamment grâce aux travaux de Borda et de Condorcet sur le sujet.</p>
-                    <h3 style="text-align:center;">Quels sont les défauts du scrutin majoritaire ?</h3>
-                    <p>Une élection sert à mesurer les opinions des électeurs et à les agréger pour choisir le meilleur candidat. Mais, le scrutin majoritaire à un ou deux tours mesure mal les opinions. Il force l’électeur à voter pour un seul candidat alors qu'il a des opinions sur tous les candidats. Un électeur pourrait vouloir soutenir plusieurs candidats, apprécier peu le candidat pour qui il a voté, voter utile, voter pour, ou voter contre. Néanmoins, chaque vote est comptabilisé comme une adhésion et vaut 1.</p>
-                    <h3 style="text-align:center;">Qu'est-ce que le jugement majoritaire ?</h3>
-                    <p>Le jugement majoritaire est un nouveau système de vote développé par deux chercheurs CNRS (organisateurs de cette expérience) comme remède aux maladies du scrutin majoritaire. Il repose sur une théorie mathématique développée depuis une dizaine d’années et publiée dans un livre paru chez MIT Press en 2011.</p>
-                    <h3 style="text-align:center;">Quel est le but de cette expérience ?</h3>
-                    <p>Cette expérience à grande échelle réalisée en partenariat avec LaPrimaire.org a pour but de&nbsp:</p>
-                    <ol>
-                        <li>familiariser les électeurs avec les récentes avancées scientifiques sur les modes de scrutin ; </li>
-                        <li>tester les avancées en vote électronique utilisant une urne électronique transparente et sécurisée basée sur la technologie blockchain.</li>
-                    </ol>
-                    <h3 style="text-align:center;">Comment participer ?</h3>
-                    <p>Vous pouvez participer à cette expérimentation soit sur <a style="color:white;" href="#avec_facebook">Facebook</a>, soit via <a style="color:white;" href="#avec_laprimaire">LaPrimaire.org</a>. Votre authentification via Facebook ou LaPrimaire.org n'a pour objectif que de limiter les possibilités de fraude à grande échelle qui viendraient biaiser les résultats de cette expérimentation. Vos votes sont anonymes : le système est conçu de telle manière que ni Facebook ni LaPrimaire.org ne peuvent savoir ce que vous avez voté.</p>
-                    <h3 style="text-align:center;">A propos du vote</h3>
-                    <p>Nous ne demandons pas à l’électeur pour qui il votera au premier tour le 23 Avril. Cependant, nous proposerons quatre candidats en plus des 11 officiels, pour illustrer une propriété importante du système : rajouter un candidat de plus à droite (ou à gauche) ne contribue pas forcément à éliminer les deux. Nous avons opté pour les quatres candidats finalistes des différentes primaires (Yannick Jadot, Alain Juppé, Charlotte Marchandise, et Manuel Valls). Les résultats (non représentatifs et ne remettant aucunement en cause la légitimité démocratique du future président/e) seront publiés seulement après le second tour. </p>
-                </div>
-            </div>
+<div id="accordion" class="container wrap panel-group"  role="tablist" aria-multiselectable="true">
+
+  <div class="">
+    <div class="panel-heading" role="tab" id="headingOne">
+      <h4 class="panel-title">
+        <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+          Qu'est-ce qu'un mode de scrutin ?
+        </a>
+      </h4>
+    </div>
+    <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+      <div class="panel-body">
+        Le mode de scrutin, c'est le système de vote par lequel on désigne le gagnant d'une élection. L'élection présidentielle française, comme la grande majorité des élections actuelles, utilise un mode de scrutin qu'on appelle "majoritaire" qui consiste à sélectionner un candidat parmi plusieurs et le candidat ayant le plus de voix remporte l'élection. Le problème c'est que ce mode de scrutin souffre de nombreux défauts scientifiquement connus depuis plusieurs siècles, notamment grâce aux travaux de Arrow, de Borda et de Condorcet sur le sujet.
+      </div>
+    </div>
+  </div>
+  <div class="">
+      <div class="panel-heading" role="tab" id="headingTwo">
+        <h4 class="panel-title">
+          <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+            Quels sont les défauts du scrutin majoritaire ?
+          </a>
+        </h4>
+      </div>
+      <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+        <div class="panel-body">
+          Une élection sert à mesurer les opinions des électeurs et à les agréger pour choisir le meilleur candidat. Mais, le scrutin majoritaire à un ou deux tours mesure mal les opinions. Il force l’électeur à voter pour un seul candidat alors qu'il a des opinions sur tous les candidats. Un électeur pourrait vouloir soutenir plusieurs candidats, apprécier peu le candidat pour qui il a voté, voter utile, voter pour, ou voter contre. Néanmoins, chaque vote est comptabilisé comme une adhésion et vaut 1.
+        </div>
+      </div>
+    </div>
+  <div class="">
+    <div class="panel-heading" role="tab" id="headingThree">
+      <h4 class="panel-title">
+        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+          Qu'est-ce que le jugement majoritaire ?
+        </a>
+      </h4>
+    </div>
+    <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+      <div class="panel-body">
+        Le jugement majoritaire est un nouveau système de vote développé par deux chercheurs CNRS (organisateurs de cette expérience) comme remède aux maladies du scrutin majoritaire. Il repose sur une théorie mathématique développée depuis une dizaine d’années et publiée dans un livre paru chez MIT Press en 2011.
+      </div>
+    </div>
+  </div>
+  <div class="">
+    <div class="panel-heading" role="tab" id="headingFour">
+      <h4 class="panel-title">
+        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+          Quel est le but de cette expérience ?
+        </a>
+      </h4>
+    </div>
+    <div id="collapseFour" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFour">
+      <div class="panel-body">
+          Cette expérience à grande échelle réalisée en partenariat avec LaPrimaire.org a pour but de&nbsp:
+          <ol>
+              <li>familiariser les électeurs avec les récentes avancées scientifiques sur les modes de scrutin ; </li>
+              <li>tester les avancées en vote électronique utilisant une urne électronique transparente et sécurisée basée sur la technologie blockchain.</li>
+          </ol>
+      </div>
+    </div>
+  </div>
+  <div class="">
+    <div class="panel-heading" role="tab" id="headingFive">
+      <h4 class="panel-title">
+        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+          Comment participer ?
+        </a>
+      </h4>
+    </div>
+    <div id="collapseFive" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFive">
+      <div class="panel-body">
+        Vous pouvez participer à cette expérimentation soit sur <a style="color:white;" href="#avec_facebook">Facebook</a>, soit via <a style="color:white;" href="#avec_laprimaire">LaPrimaire.org</a>. Votre authentification via Facebook ou LaPrimaire.org n'a pour objectif que de limiter les possibilités de fraude à grande échelle qui viendraient biaiser les résultats de cette expérimentation. Vos votes sont anonymes : le système est conçu de telle manière que ni Facebook ni LaPrimaire.org ne peuvent savoir ce que vous avez voté.
+      </div>
+    </div>
+  </div>
+  <div class="">
+    <div class="panel-heading" role="tab" id="headingSix">
+      <h4 class="panel-title">
+        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
+          A propos du vote
+        </a>
+      </h4>
+    </div>
+    <div id="collapseSix" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingSix">
+      <div class="panel-body">
+        Nous ne demandons pas à l’électeur pour qui il votera au premier tour le 23 Avril. Cependant, nous proposerons quatre candidats en plus des 11 officiels, pour illustrer une propriété importante du système : rajouter un candidat de plus à droite (ou à gauche) ne contribue pas forcément à éliminer les deux. Nous avons opté pour les quatres candidats finalistes des différentes primaires (Yannick Jadot, Alain Juppé, Charlotte Marchandise, et Manuel Valls). Les résultats (non représentatifs et ne remettant aucunement en cause la légitimité démocratique du future président/e) seront publiés seulement après le second tour.
+      </div>
+    </div>
+  </div>
+</div>
+
         </section>
         <section id="a_vous_voter" class="grey-light-background">
             <div class="container">
                 <div id="boutons-wrap">
                     <h3 class="rosy">à vous de voter !</h3>
-                    <div style="text-align:center;"><a id="avec_facebook" class="btn rosy-background" style="border-radius:0px;"><i class="fa fa-facebook-square" style="color:white;" aria-hidden="true"></i>&nbsp;Participer<br><span>sur Facebook</span></a></div><br/>
-                    <div style="text-align:center;"><a id="avec_laprimaire" class="btn" style="border-radius:0px;">Participer<br><span>sur LaPrimaire.org</span></a></div>
+
+                    <div style="text-align:center;"><a href="https://m.me/JugementMajoritairePresidentielle2017" id="avec_facebook" class="btn btn-rosy-hover" style="border-radius:0px;"><i class="fa fa-facebook-square white"  aria-hidden="true"   ></i>&nbsp;Participer<br><span>sur Facebook</span></a></div><br/>
+                    <div style="text-align:center;"><a href"https://www.laprimaire.org" id="avec_laprimaire" class="btn" style="border-radius:0px;">Participer<br><span>sur LaPrimaire.org</span></a></div>
                 </div>
             </div>
         </section>
@@ -335,7 +187,10 @@
                         <img class="lazy" data-original="https://s3.eu-west-2.amazonaws.com/www.jugementmajoritaire2017.com/images/bd/jm-MarjolaineLerayBD03.jpg" width="100%">
                     </div>
                 </div>
-                <div id="lechoixcommun">l'intégralité de la bd<br><span>sur lechoixcommun.fr</span></div>
+                <div id="lechoixcommun">l'intégralité de la bd<br><span>sur <a href="lechoixcommun.fr">lechoixcommun.fr</a></span></div>
+                <div id="scienceetonnante">Vidéo pour approfondir<br><span>sur <a href="https://www.youtube.com/watch?v=ZoGH7d51bvc&feature=youtu.be&ab_channel=ScienceEtonnante">youtube.fr</a></span></div>
+
+
             </div>
         </section>
         <section id="remerciements" class="grey-dark-background">
@@ -359,9 +214,9 @@
                 <div class="point">.</div>
                 <h3>a propos</h3>
                 <ul style="text-align:justify;font-size:12px;">
-                    <li style="margin-bottom:10px;"><strong>Michel Louis Balinski</strong> est mathématicien dont les recherches portent surtout sur des problèmes issus de l’économie, de la recherche opérationnelle, de l’optimisation et des sciences politiques. Américain, il fut éduqué aux USA où il a vécu et travaillé avant de rejoindre la France en 1980. Il est connu pour ses contributions en optimisation combinatoire ; les polyèdres convexes ; les mariages stables ; et les systèmes électoraux en théorie et en pratique, en particulier, sa méthode de vote bi-proportionnelle utilisée pour élire les députés dans plusieurs cantons suisses. Il est directeur de recherche de classe exceptionnelle (émérite) au CNRS à l’Ecole Polytechnique. Il est fondateur de la revue internationale Mathematical Programming et fut président de la Mathematical Optimization Society. En 2013 il a été lauréat du prestigieux prix « John von Neumann Theory Prize ». Contacts : <a href="https://sites.google.com/site/michellbalinski/" target="_blank">Page web</a> - Email : mlbalinski(at)gmail(dot)com</li>
-                    <li style="margin-bottom:10px;"><strong>Rida Laraki</strong> est Directeur de Recherche CNRS au LAMSADE (Université Paris Dauphine), et professeur à l’École Polytechnique. Il est ingénieur diplômé de l’Ecole Polytechnique (X93) et docteur en mathématiques de l’université Pierre et Marie Curie. Ses travaux de recherche portent sur la théorie des jeux, le choix social, l'optimisation, l’économie théorique, et la recherche opérationnelle. Il co-organise un séminaire hebdomadaire en théorie des jeux à l’Institut Henri Poincaré depuis 2001, et a organisé de nombreuses conférences nationales et internationales. Il est éditeur associé dans trois revues scientifiques, il est responsable du programme doctoral d’informatique à l’Université Paris Dauphine, et responsable du groupe Mathématique de la Modélisation et de la Décision de la la Société de Mathématiques Appliquées et Industrielles (SMAI-MODE). Contacts : <a href="https://sites.google.com/site/ridalaraki/" target="_blank">Page web</a> - Email : rida.lakari(at)gmail(dot)com</li>
-                    <li style="margin-bottom:10px;"><strong>LaPrimaire.org</strong> LaPrimaire.org est une initiative citoyenne qui organise en amont de chaque élection des primaires ouvertes à tous et omni-partisanes dont l’objectif est de faire émerger les meilleur(e)s candidat(e)s de la société civile. Imaginée et initiée en janvier 2015 par Thibauld Favre, entrepreneur, et David Guez, avocat au barreau de Paris, LaPrimaire.org a organisé la première primaire ouverte au monde pour la présidentielle de 2017. Avec 110,000 citoyens inscrits, plus de 500 candidat(e)s, LaPrimaire.org a permis aux citoyens français d'utiliser le jugement majoritaire pour faire émerger Charlotte Marchandise, candidate à la présidentielle qui a recueilli 135 parrainages en 2 mois. LaPrimaire.org organise en ce moment 577 primaires ouvertes pour les législatives. Contacts : <a href="https://legislatives.laprimaire.org" target="_blank">Page web</a> - Email : contact(at)laprimaire(do)org</li>
+                    <li style="margin-bottom:10px;"><strong>Michel Louis Balinski</strong> est mathématicien dont les recherches portent surtout sur des problèmes issus de l’économie, de la recherche opérationnelle, de l’optimisation et des sciences politiques. Américain, il fut éduqué aux USA où il a vécu et travaillé avant de rejoindre la France en 1980. Il est connu pour ses contributions en optimisation combinatoire ; les polyèdres convexes ; les mariages stables ; et les systèmes électoraux en théorie et en pratique, en particulier, sa méthode de vote bi-proportionnelle utilisée pour élire les députés dans plusieurs cantons suisses. Il est directeur de recherche de classe exceptionnelle (émérite) au CNRS à l’Ecole Polytechnique. Il est fondateur de la revue internationale Mathematical Programming et fut président de la Mathematical Optimization Society. En 2013 il a été lauréat du prestigieux prix « John von Neumann Theory Prize ». Contacts : <a href="https://sites.google.com/site/michellbalinski/"  target="_blank">Page web</a></li>
+                    <li style="margin-bottom:10px;"><strong>Rida Laraki</strong> est Directeur de Recherche CNRS au LAMSADE (Université Paris Dauphine), et professeur à l’École Polytechnique. Il est ingénieur diplômé de l’Ecole Polytechnique (X93) et docteur en mathématiques de l’université Pierre et Marie Curie. Ses travaux de recherche portent sur la théorie des jeux, le choix social, l'optimisation, l’économie théorique, et la recherche opérationnelle. Il co-organise un séminaire hebdomadaire en théorie des jeux à l’Institut Henri Poincaré depuis 2001, et a organisé de nombreuses conférences nationales et internationales. Il est éditeur associé dans trois revues scientifiques, il est responsable du programme doctoral d’informatique à l’Université Paris Dauphine, et responsable du groupe Mathématique de la Modélisation et de la Décision de la la Société de Mathématiques Appliquées et Industrielles (SMAI-MODE). Contacts : <a href="https://sites.google.com/site/ridalaraki/" target="_blank">Page web</a></li>
+                    <li style="margin-bottom:10px;"><strong>LaPrimaire.org</strong> LaPrimaire.org est une initiative citoyenne qui organise en amont de chaque élection des primaires ouvertes à tous et omni-partisanes dont l’objectif est de faire émerger les meilleur(e)s candidat(e)s de la société civile. Imaginée et initiée en janvier 2015 par Thibauld Favre, entrepreneur, et David Guez, avocat au barreau de Paris, LaPrimaire.org a organisé la première primaire ouverte au monde pour la présidentielle de 2017. Avec 110,000 citoyens inscrits, plus de 500 candidat(e)s, LaPrimaire.org a permis aux citoyens français d'utiliser le jugement majoritaire pour faire émerger Charlotte Marchandise, candidate à la présidentielle qui a recueilli 135 parrainages en 2 mois. LaPrimaire.org organise en ce moment 577 primaires ouvertes pour les législatives. Contacts : <a href="https://legislatives.laprimaire.org" target="_blank">Page web</a> - <a href="https://laprimaire.org/contact/?topic=exp%C3%A9rimentation%20jugement%20majoritaire">Email</a></li>
                 </ul>
                 <div class="point">.</div>
                 <h3>remerciements</h3>
