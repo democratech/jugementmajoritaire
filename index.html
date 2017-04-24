@@ -2,6 +2,7 @@
 <html lang="fr">
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Votez selon le Jugement Majoritaire pour l'élection présidentielle de 2017</title>
         <meta charset="utf-8"/>
         <meta name="description" content="Et si on changeait de mode de scrutin ? Le Jugement Majoritaire est un mode de scrutin inventé par 2 chercheurs français permettant aux votants d'exprimer leur préférences de manière fidèle sur les choix proposés."/>
@@ -15,7 +16,7 @@
         <meta property="og:description" content="Et si on changeait de mode de scrutin ? Le Jugement Majoritaire est un mode de scrutin inventé par 2 chercheurs français permettant aux votants d'exprimer leur préférences de manière fidèle sur les choix proposés.">
         <meta property="og:image" content="https://s3.eu-west-2.amazonaws.com/www.jugementmajoritaire2017.com/images/banner-fb.jpg">
         <meta property="og:image:secure_url" content="https://s3.eu-west-2.amazonaws.com/www.jugementmajoritaire2017.com/images/banner-fb.jpg">
-        <meta name="twitter:image:src" content="https://s3.eu-central-1.amazonaws.com/laprimaire/images/primaire_citoyenne_fev17.jpg">
+        <meta name="twitter:image:src" content="https://s3.eu-west-2.amazonaws.com/www.jugementmajoritaire2017.com/images/banner-fb.jpg">
         <meta name="twitter:widgets:csp" content="on">
         <meta name="twitter:card" content="summary_large_image">
         <meta name="twitter:site" content="@democratech">
@@ -132,6 +133,10 @@
             font-size:20px;
             text-align:center;
         }
+        .wrapbis {
+            width:85%;
+            margin:0 auto;
+        }
         .wrap {
             width:60%;
             margin:0 auto;
@@ -197,11 +202,13 @@
             font-size:17px;
             font-weight:normal;
         }
+/*
         #avec_laprimaire:hover {
             background-color:#ff434c;
             color:white;
             cursor: pointer;
         }
+*/
         #avec_laprimaire {
             color: #ff434c;
             padding:10px;
@@ -244,7 +251,7 @@
         #participer:hover {
             cursor: pointer;
         }
-        .btn {
+        .btn-main {
             border-radius:0px;
             background-color:white;
             padding:10px;
@@ -255,7 +262,7 @@
             margin:0 auto;
             margin-bottom:40px;
         }
-        .btn:hover{
+        .btn-main:hover{
             color:white;
         }
         .btn-blue{
@@ -284,6 +291,12 @@
         }
         #nb_participants {
             font-size:22px;
+        }
+        #input_pb {
+            display:none;
+            color:red;
+            font-size:14px;
+            font-style:italic;
         }
 </style>
     </head>
@@ -314,113 +327,125 @@
                 <div id="header_question"><h1><span class="rosy-background">et si on expérimentait un nouveau mode de scrutin&nbsp;?</span></h1></div>
                 <div id="header_subtitle"><h2 class="blue">L'élection présidentielle au <span>Jugement Majoritaire</span></h2></div>
                 <div style="text-align:center;margin-bottom:40px;">
-                    <a class="btn btn-rosy" id="participer" style="margin-bottom:20px;" disabled>Participer</a>
-                    <div id='nb_participants' class="blue">Ouverture demain, mardi 11 avril 2017</div>
+                    <!--<a class="btn btn-rosy" data-target="#instructions" data-toggle="modal" id="participer" style="cursor:pointer;margin-bottom:20px;">Participer</a>-->
+                    <a class="btn btn-main btn-rosy" id="participer" href="#a_vous_voter" style="cursor:pointer;margin-bottom:20px;">Participer</a>
+                    <div id="nb_participants" class="blue">Les votes sont clos. Les résultats seront en ligne le 12 mai.</div>
+                    <div class="blue">Ouverture d'une nouvelle expérimentation mardi 25 avril 2017</div>
                 </div>
+                <div class="row">
+                    <div class="col-md-3 col-sm-6">&nbsp;</div>
+                    <div class="col-md-3 col-sm-6">
+                        <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.jugementmajoritaire2017.com" target="_blank"><img src="https://laprimaire.org/assets/images/social/share-facebook.png"></a>
+                    </div>
+                    <div class="col-md-3 col-sm-6">
+                        <a href="https://twitter.com/intent/tweet?url=https%3A%2F%2Fwww.jugementmajoritaire2017.com&text=Et%20si%20on%20changeait%20de%20syst%C3%A8me%20de%20vote%20pour%20la%20pr%C3%A9sidentielle%20%3F&via=democratech&hashtags=Présidentielle2017,Expérience" target="_blank"><img src="https://laprimaire.org/assets/images/social/share-twitter.png"></a>
+                    </div>
+                    <div class="col-md-3 col-sm-6">&nbsp;</div>
+                </div><br/>
             </div>
         </header>
         <section id="explication" class="blue-background">
-<div id="accordion" class="container wrap panel-group"  role="tablist" aria-multiselectable="true">
+            <div class="container">
+                <div id="accordion" class="container wrapbis panel-group"  role="tablist" aria-multiselectable="true">
 
-  <div class="">
-    <div class="panel-heading" role="tab" id="headingOne">
-      <h4 class="panel-title">
-        <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-          Qu'est-ce qu'un mode de scrutin ?
-        </a>
-      </h4>
-    </div>
-    <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
-      <div class="panel-body">
-        Le mode de scrutin, c'est le système de vote par lequel on désigne le gagnant d'une élection. L'élection présidentielle française, comme la grande majorité des élections actuelles, utilise un mode de scrutin qu'on appelle "majoritaire" qui consiste à sélectionner un candidat parmi plusieurs et le candidat ayant le plus de voix remporte l'élection. On sait cependant depuis plusieurs siècles, grâce notamment aux travaux de Borda, de Condorcet, et de Arrow sur le sujet, que ce mode de scrutin donne des résultats paradoxaux.
-      </div>
-    </div>
-  </div>
-  <div class="">
-      <div class="panel-heading" role="tab" id="headingTwo">
-        <h4 class="panel-title">
-          <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-            Quels sont les défauts du scrutin majoritaire ?
-          </a>
-        </h4>
-      </div>
-      <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
-        <div class="panel-body">
-          Une élection sert à mesurer les opinions des électeurs et à les agréger pour choisir le meilleur candidat. Mais, le scrutin majoritaire à un ou deux tours mesure mal les opinions. Il force l’électeur à voter pour un seul candidat alors qu'il a des opinions sur tous les candidats. Un électeur pourrait vouloir soutenir plusieurs candidats, apprécier peu le candidat pour qui il a voté, voter utile, voter pour, ou voter contre. Néanmoins, chaque vote est comptabilisé comme une adhésion et vaut 1.
-        </div>
-      </div>
-    </div>
-  <div class="">
-    <div class="panel-heading" role="tab" id="headingThree">
-      <h4 class="panel-title">
-        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-          Qu'est-ce que le jugement majoritaire ?
-        </a>
-      </h4>
-    </div>
-    <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
-      <div class="panel-body">
-        Le jugement majoritaire est un nouveau système de vote développé par deux chercheurs CNRS (organisateurs de cette expérience) comme remède aux maladies du scrutin majoritaire. Il repose sur une théorie mathématique développée depuis une dizaine d’années et publiée dans un livre paru chez MIT Press en 2011.
-        Chaque électeur attribue à chaque candidat/e une mention «Très bien», «Bien», «Assez bien», «Passable», «Insuffisant» ou «A Rejeter». Le/la candidat/e élu/e est celui ou celle qui obtient la meilleure mention soutenue par une majorité. Au cas où deux candidat(e)s ont la même mention majoritaire, celui ou celle qui gagne (ou perd) est celui ou celle avec le plus d'électeurs lui attribuants strictement plus (ou strictement moins) que sa mention majoritaire (<a href="#bd" class="yellow">voir la BD</a>).
-      </div>
-    </div>
-  </div>
-  <div class="">
-    <div class="panel-heading" role="tab" id="headingFour">
-      <h4 class="panel-title">
-        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
-          Quel est le but de cette expérience ?
-        </a>
-      </h4>
-    </div>
-    <div id="collapseFour" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFour">
-      <div class="panel-body">
-          Cette expérience à grande échelle réalisée en partenariat avec LaPrimaire.org a pour but de&nbsp:
-          <ol>
-              <li>familiariser les électeurs avec les récentes avancées scientifiques sur les modes de scrutin ; </li>
-              <li>tester les avancées en vote électronique utilisant une urne électronique transparente et sécurisée basée sur la technologie blockchain.</li>
-          </ol>
-      </div>
-    </div>
-  </div>
-  <div class="">
-    <div class="panel-heading" role="tab" id="headingFive">
-      <h4 class="panel-title">
-        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
-          Comment participer ?
-        </a>
-      </h4>
-    </div>
-    <div id="collapseFive" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFive">
-      <div class="panel-body">
-        Vous pouvez participer à cette expérimentation soit sur <a style="color:white;" href="#avec_facebook">Facebook</a>, soit via <a style="color:white;" href="#avec_laprimaire">LaPrimaire.org</a>. Votre authentification via Facebook ou LaPrimaire.org n'a pour objectif que de limiter les possibilités de fraude à grande échelle qui viendraient biaiser les résultats de cette expérimentation. Vos votes sont anonymes : le système est conçu de telle manière que ni Facebook ni LaPrimaire.org ne peuvent savoir ce que vous avez voté.
-      </div>
-    </div>
-  </div>
-  <div class="">
-    <div class="panel-heading" role="tab" id="headingSix">
-      <h4 class="panel-title">
-        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
-          A propos du vote
-        </a>
-      </h4>
-    </div>
-    <div id="collapseSix" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingSix">
-      <div class="panel-body">
-        Nous ne demandons pas à l’électeur pour qui il votera au premier tour le 23 Avril. Cependant, nous proposerons quatre candidats en plus des 11 officiels, pour illustrer une propriété importante du système : rajouter un candidat de plus à droite (ou à gauche) ne contribue pas forcément à éliminer les deux. Nous avons opté pour les quatres candidats finalistes des différentes primaires (Yannick Jadot, Alain Juppé, Charlotte Marchandise, et Manuel Valls). Les résultats (non représentatifs et ne remettant aucunement en cause la légitimité démocratique du future président/e) seront publiés seulement après le second tour.
-      </div>
-    </div>
-  </div>
-</div>
-
+                  <div class="">
+                    <div class="panel-heading" role="tab" id="headingOne">
+                      <h4 class="panel-title">
+                        <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                          Qu'est-ce qu'un mode de scrutin ?
+                        </a>
+                      </h4>
+                    </div>
+                    <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+                      <div class="panel-body">
+                        Le mode de scrutin, c'est le système de vote par lequel on désigne le gagnant d'une élection. L'élection présidentielle française, comme la grande majorité des élections actuelles, utilise un mode de scrutin qu'on appelle "majoritaire" qui consiste à sélectionner un candidat parmi plusieurs et le candidat ayant le plus de voix remporte l'élection. On sait cependant depuis plusieurs siècles, grâce notamment aux travaux de Borda, de Condorcet, et de Arrow sur le sujet, que ce mode de scrutin donne des résultats paradoxaux.
+                      </div>
+                    </div>
+                  </div>
+                  <div class="">
+                      <div class="panel-heading" role="tab" id="headingTwo">
+                        <h4 class="panel-title">
+                          <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                            Quels sont les défauts du scrutin majoritaire ?
+                          </a>
+                        </h4>
+                      </div>
+                      <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+                        <div class="panel-body">
+                          Une élection sert à mesurer les opinions des électeurs et à les agréger pour choisir le meilleur candidat. Mais, le scrutin majoritaire à un ou deux tours mesure mal les opinions. Il force l’électeur à voter pour un seul candidat alors qu'il a des opinions sur tous les candidats. Un électeur pourrait vouloir soutenir plusieurs candidats, apprécier peu le candidat pour qui il a voté, voter utile, voter pour, ou voter contre. Néanmoins, chaque vote est comptabilisé comme une adhésion et vaut 1.
+                        </div>
+                      </div>
+                    </div>
+                  <div class="">
+                    <div class="panel-heading" role="tab" id="headingThree">
+                      <h4 class="panel-title">
+                        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                          Qu'est-ce que le jugement majoritaire ?
+                        </a>
+                      </h4>
+                    </div>
+                    <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+                      <div class="panel-body">
+                        Le jugement majoritaire est un nouveau système de vote développé par deux chercheurs CNRS (organisateurs de cette expérience) comme remède aux maladies du scrutin majoritaire. Il repose sur une théorie mathématique développée depuis une dizaine d’années et publiée dans un livre paru chez MIT Press en 2011.
+                        Chaque électeur attribue à chaque candidat/e une mention «Très bien», «Bien», «Assez bien», «Passable», «Insuffisant» ou «A Rejeter». Le/la candidat/e élu/e est celui ou celle qui obtient la meilleure mention soutenue par une majorité. Au cas où deux candidat(e)s ont la même mention majoritaire, celui ou celle qui gagne (ou perd) est celui ou celle avec le plus d'électeurs lui attribuants strictement plus (ou strictement moins) que sa mention majoritaire (<a href="#bd" class="yellow">voir la BD</a>).
+                      </div>
+                    </div>
+                  </div>
+                  <div class="">
+                    <div class="panel-heading" role="tab" id="headingFour">
+                      <h4 class="panel-title">
+                        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                          Quel est le but de cette expérience ?
+                        </a>
+                      </h4>
+                    </div>
+                    <div id="collapseFour" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFour">
+                      <div class="panel-body">
+                          Cette expérience à grande échelle réalisée en partenariat avec LaPrimaire.org a pour but de&nbsp:
+                          <ol>
+                              <li>familiariser les électeurs avec les récentes avancées scientifiques sur les modes de scrutin ; </li>
+                              <li>tester les avancées en vote électronique utilisant une urne électronique transparente et sécurisée basée sur la technologie blockchain.</li>
+                          </ol>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="">
+                    <div class="panel-heading" role="tab" id="headingFive">
+                      <h4 class="panel-title">
+                        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                          Comment participer ?
+                        </a>
+                      </h4>
+                    </div>
+                    <div id="collapseFive" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFive">
+                      <div class="panel-body">
+                        Vous pouvez participer à cette expérimentation soit sur <a style="color:white;" href="#avec_facebook">Facebook</a>, soit via <a style="color:white;" href="#avec_laprimaire">LaPrimaire.org</a>. Votre authentification via Facebook ou LaPrimaire.org n'a pour objectif que de limiter les possibilités de fraude à grande échelle qui viendraient biaiser les résultats de cette expérimentation. Vos votes sont anonymes : le système est conçu de telle manière que ni Facebook ni LaPrimaire.org ne peuvent savoir ce que vous avez voté.
+                      </div>
+                    </div>
+                  </div>
+                  <div class="">
+                    <div class="panel-heading" role="tab" id="headingSix">
+                      <h4 class="panel-title">
+                        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
+                          A propos du vote
+                        </a>
+                      </h4>
+                    </div>
+                    <div id="collapseSix" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingSix">
+                      <div class="panel-body">
+                        Nous ne demandons pas à l’électeur pour qui il votera au premier tour le 23 Avril. Cependant, nous proposerons quatre candidats en plus des 11 officiels, pour illustrer une propriété importante du système : rajouter un candidat de plus à droite (ou à gauche) ne contribue pas forcément à éliminer les deux. Nous avons opté pour les quatres candidats finalistes des différentes primaires (Yannick Jadot, Alain Juppé, Charlotte Marchandise, et Manuel Valls). Les résultats (non représentatifs et ne remettant aucunement en cause la légitimité démocratique du future président/e) seront publiés seulement après le second tour.
+                      </div>
+                    </div>
+                  </div>
+                </div>
+            </div>
         </section>
-        <section id="a_vous_voter" class="grey-light-background" style="display:none;">
+        <section id="a_vous_voter" class="grey-light-background">
             <div class="container">
                 <div id="boutons-wrap">
                     <h3 class="rosy">à vous de voter !</h3>
-
-                    <div style="text-align:center;"><a href="https://m.me/JugementMajoritairePresidentielle2017" id="avec_facebook" class="btn btn-rosy-hover" style="border-radius:0px;"><i class="fa fa-facebook-square white"  aria-hidden="true"   ></i>&nbsp;Participer<br><span>sur Facebook</span></a></div><br/>
-                    <div style="text-align:center;"><a href"https://www.laprimaire.org" id="avec_laprimaire" class="btn" style="border-radius:0px;">Participer<br><span>sur LaPrimaire.org</span></a></div>
+                    <div style="text-align:center;"><a data-target="#instructions" data-toggle="modal" id="avec_facebook" class="btn btn-rosy-hover" style="border-radius:0px;cursor:pointer;"><i class="fa fa-facebook-square white"  aria-hidden="true"   ></i>&nbsp;Participer<br><span>sur Facebook</span></a></div><br/>
+                    <div style="text-align:center;"><a id="avec_laprimaire" class="btn" data-toggle="modal" data-target="#JoinUsNow" style="border-radius:0px;cursor:pointer;" alt="bientôt" title="bientôt">Participer<br><span>sur LaPrimaire.org</span></a></div>
                 </div>
             </div>
         </section>
@@ -442,7 +467,7 @@
                         <img class="lazy" data-original="https://s3.eu-west-2.amazonaws.com/www.jugementmajoritaire2017.com/images/bd/jm-MarjolaineLerayBD03.jpg" width="100%">
                     </div>
                 </div>
-                <div id="lechoixcommun">l'intégralité de la bd<br><span>sur <a href="lechoixcommun.fr">lechoixcommun.fr</a></span></div>
+                <div id="lechoixcommun">l'intégralité de la bd<br><span>sur <a href="https://www.lechoixcommun.fr/articles/Vous_reprendrez_bien_un_peu_de_democratie-1.html" target="_blank">lechoixcommun.fr</a></span></div>
                 <br/>
                 <h3 class="yellow">pour en savoir (encore) plus</h3>
                 <div id="scienceetonnante">
@@ -470,6 +495,27 @@
                     <li>Page web sur le <a href="https://sites.google.com/site/ridalaraki/majority-judgment" target="_blank">jugement majoritaire</a>.</li>
                 </ul>
                 <div class="point">.</div>
+                <h3>Autres expériences et liens utiles</h3>
+                <ul style="text-align:justify;font-size:12px;">
+                    <li><a target="_blank" href="https://vote.imag.fr/">Voter autrement</a>&nbsp;: une autre expérimentation sur les systèmes de vote organisée par le CNRS, l'Université de Caen, le CREM, la Paris School of Economics, l'Université Jean-Monnet Saint-Étienne, l'Université de Strasbourg, l'Université Grenoble-Alpes et Grenoble-INP.</li>
+                    <li><a target="_blank" href="https://vote.imag.fr/info">Expérimentations in-situ 2017</a>&nbsp;: le site contenant toutes les informations concernant les expérimentations <em>in situ</em>
+                      qui auront lieu dans cinq bureaux de vote en France lors du premier tour des élections présidentielles le 23 avril 2017.</li>
+                    <li><a target="_blank" href="https://www.facebook.com/votaction2017">Votaction 2017</a>&nbsp;: la page Facebook du collectif citoyen travaillant sur l'organisation
+                      des expérimentations <em>in situ</em> de Crolles et Allevard-les-Bains, dans l'Isère.</li>
+                    <li><a target="_blank" href="https://voteaupluriel.org/">Vote Au Pluriel</a> (Archive)&nbsp;: une expérimentation de vote en ligne réalisée par un collectif de chercheurs français et canadiens
+                      lors de l'élection présidentielle 2012, et permettant de tester plusieurs modes de scrutin : scrutins uninominaux, Vote Alternatif (correspondant au vote par élimination séquentielle dans notre
+                      expérimentation) et vote par approbation.</li>
+                    <li><a target="_blank" href="http://votefoot.org/">VoteFoot</a>&nbsp;: site proposant de voter pour déterminer
+                      le meilleur joueur de foot 2016. Le site propose trois modes de scrutin&nbsp;: uninominal, vote par classement
+                      des trois meilleurs joueurs (ressemblant au mode de scrutin Borda 4, mais avec une échelle de points différente),
+                      vote par approbation.</li>
+                    <li><a target="_blank" href="http://lacontreelection.com/">La Contre Élection</a>&nbsp;: site associatif proposant de voter aux élections présidentielles 2017 selon la méthode du Vote Alternatif,
+                      correspondant au vote par élimination séquentielle que nous vous proposons d'expérimenter.</li>
+                    <li><a target="_blank" href="http://www.votedevaleur.org/">Vote de Valeur</a>&nbsp;: un site proposant de voter selon un mode de scrutin par note, expérimenté lors des élections
+                      présidentielles de 2012.</li>
+                    <li><a target="_blank" href="http://www.derangeonslachambre.fr/">Dérangeons la Chambre</a>&nbsp;: une application web de science politique créée par <a target="_blank" href="http://www.sciencespo-grenoble.fr/membres/magni-berton-raul/">Raul Magni-Berton</a> et l'agence <a target="_blank" href="http://skoli.fr/">Skoli</a> permettant de simuler la représentation nationale et les rapports de force qu'il existerait à l'Assemblée Nationale si l'on changeait les règles de désignation des députés.</li>
+                </ul>
+                <div class="point">.</div>
                 <h3>a propos</h3>
                 <ul style="text-align:justify;font-size:12px;">
                     <li style="margin-bottom:10px;"><strong>Michel Louis Balinski</strong> est mathématicien dont les recherches portent surtout sur des problèmes issus de l’économie, de la recherche opérationnelle, de l’optimisation et des sciences politiques. Américain, il fut éduqué aux USA où il a vécu et travaillé avant de rejoindre la France en 1980. Il est connu pour ses contributions en optimisation combinatoire ; les polyèdres convexes ; les mariages stables ; et les systèmes électoraux en théorie et en pratique, en particulier, sa méthode de vote bi-proportionnelle utilisée pour élire les députés dans plusieurs cantons suisses. Il est directeur de recherche de classe exceptionnelle (émérite) au CNRS à l’Ecole Polytechnique. Il est fondateur de la revue internationale Mathematical Programming et fut président de la Mathematical Optimization Society. En 2013 il a été lauréat du prestigieux prix « John von Neumann Theory Prize ». Contacts : <a href="https://sites.google.com/site/michellbalinski/"  target="_blank">Page web</a></li>
@@ -478,7 +524,11 @@
                 </ul>
                 <div class="point">.</div>
                 <h3>remerciements</h3>
-                <p style="text-align:center;font-size:12px;">Marjolaine Leray (BD et illustrations), Hermann Bouly (BD et illustrations), Jean-Marc Le Roux (Module de vote), Pierre-Louis Guhur (bot facebook)</p>
+                <ul style="text-align:justify;font-size:12px;">
+                <li style="font-size:12px;">Marjolaine Leray et Hermann Bouly (Pour la BD et les illustrations inspirées de leur site <a href="https://www.lechoixcommun.fr/" target="_blank">lechoixcommun.fr</a>)</li>
+                <li  style="font-size:12px;">Jean-Marc Le Roux (Pour <a href="https://cocorico.cc/" target="_blank">Cocorico</a>, le module de vote développé dans le cadre de <a href="https://www.mavoix.info/" target="_blank">#MaVoix</a>)</li>
+                <li style="font-size:12px;"><a href="https://medium.com/@pierrelouisguhur" target="_blank">Pierre-Louis Guhur</a> (pour son aide technique sur le bot et le site web)</li>
+                </ul>
                 <div class="point">.</div>
                 <h3>mentions légales</h3>
                 <p style="text-align:justify;font-size:12px;">Les informations recueillies sont nécessaires au bon déroulement du vote. Vos données ne seront jamais commercialisées. Elles font l’objet d’un traitement informatique et sont réservées à l’usage de LaPrimaire.org - Association Loi 1901 (RNA n° W751235289). Pour participer à l'expérimentation via Facebook, vous devez simplement disposer d'un compte Facebook valide. En participant à l'expérimentation via LaPrimaire.org, vous autorisez LaPrimaire.org à utiliser vos données pour des opérations d'information, de communication et de dons. Vos informations ne pourront être communiquées qu’à des co-contractants de LaPrimaire.org, qui, en leur qualité de sous-traitants, n'agiront que sur les instructions de cette dernière et seront soumis à une stricte obligation de confidentialité. En application des dispositions des articles 38 et suivants de la loi du 6 janvier 1978 modifiée, vous bénéficiez d’un droit d’accès, de rectification, de suppression et d’opposition aux informations vous concernant. Vous pouvez exercer ces droits en nous adressant un e-mail à l’adresse confidentialite(a)laprimaire(dot)org.</p>
@@ -494,6 +544,59 @@
                 </div>
             </div>
         </section>
+        <!-- Modal -->
+    <div class="modal fade" id="JoinUsNow" tabindex="-1" role="dialog" aria-labelledby="JoinUsNow">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header rosy-background">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title" style="text-align:center;">Participer à l'expérimentation sur LaPrimaire.org</h4>
+          </div>
+                  <div class="modal-body">
+            <p style="font-size:14px;">Entrez votre email pour obtenir votre lien d'accès personnel à l'espace de vote :</p>
+            <form class="navbar-form" role="email" id="login_form">
+                <div class="form-group">
+                    <input type="text" id="input_email" class="form-control" placeholder="Votre adresse email">
+                    <input type="hidden" id="input_candidate" class="form-control" value="">
+                    <input type="hidden" id="input_referer" class="form-control" value="">
+                </div>
+                <button type="submit" class="btn btn-primary"><i style="width:30px;padding:0px;display:none;" id="input_loading" class="fa fa-refresh fa-spin fa-fw"></i>Accéder</button>
+                <span id="input_pb" style="display:none;">mauvais email</span>
+            </form>
+               </div>
+           <div class="modal-footer">
+               <p style="font-size:10px;text-align:justify;color:#777;font-style:italic;">* Les informations recueillies sont nécessaires à la gestion de nos relations. Elles font l’objet d’un traitement informatique et sont réservées à l’usage de LaPrimaire.org - Association Loi 1901 (RNA n° W751235289). En remplissant ce formulaire, vous nous autorisez à utiliser vos données pour des opérations d'information, de communication et de dons. Vos informations ne pourront être communiquées qu’à des co-contractants de LaPrimaire.org, qui, en leur qualité de sous-traitants, n'agiront que sur les instructions de cette dernière et seront soumis à une stricte obligation de confidentialité. Vos données ne seront jamais commercialisées. En application des dispositions des articles 38 et suivants de la loi du 6 janvier 1978 modifiée, vous bénéficiez d’un droit d’accès, de rectification, de suppression et d’opposition aux informations vous concernant. Vous pouvez exercer ces droits en nous adressant un e-mail à l’adresse confidentialite@laprimaire.org.</p>
+           </div>
+           </div>
+    </div>
+  </div>
+    <!-- Modal -->
+        <div class="modal fade" id="instructions" tabindex="-1" role="dialog" aria-labelledby="shareByEmail">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header rosy-background">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="shareByEmail" style="text-align:center;">Quelques instructions avant de démarrer</h4>
+              </div>
+              <div class="modal-body">
+                <div class="row" style="text-align:left;padding:10px;">
+                    <p>L'expérimentation se déroule via Facebook Messenger (et bientôt sur LaPrimaire.org également) :</p>
+                    <ol>
+                        <li>Pour lancer l'expérimentation dans la fenêtre facebook messenger, cliquez sur "<i>Démarrer</i>" en bas de la fenêtre</li>
+                        <li>Répondez aux questions qui vous sont posées via les boutons qui s'affichent en bas de la fenêtre</li>
+                        <li>Au moment de voter, si un avertissement s'affiche vous disant que votre navigateur n'a pas été testé, cliquez sur le bouton "ignorer" pour continuer</li>
+                    </ol>
+                    <p>Enfin, en cas de souci, sachez que vous pouvez réinitialiser l'expérimentation en écrivant "<i>/start</i>" (sans les guillemets).</p>
+                </div>
+              </div>
+              <div class="modal-footer">
+                  <div style="text-align:center;margin-bottom:0px;">
+                        <a class="btn btn-main btn-rosy" id="participer" style="margin-bottom:0px;" target="_blank" href="https://m.me/JugementMajoritairePresidentielle2017?ref=jm2017.com">C'est parti !</a>
+                  </div>
+              </div>
+            </div>
+          </div>
+        </div>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js" type="text/javascript"></script>
     <script>
@@ -511,12 +614,36 @@ $(document).ready(function(){
                 });
         }
         $.ajax({
-              url:"https://api.democratech.co/v1/payment/candidate/663402096368",
+              url:"https://laprimaire.org/api/facebook_voting_nb",
               dataType: "json",
               success: function(data) {
                   //$('#nb_participants').html("Déjà <b>" + data.total + "</b> participant(e)s !");
               }
         });
+        if ($('#JoinsUsNow')!=null) {
+                $('#JoinUsNow').on('shown.bs.modal', function () {
+                        ga('send', 'pageview', '/inscription-popup/');
+                        $('#input_email').on('focus', function(e) {
+                                $('#input_pb').hide();
+                        })      
+                        $('#login_form').on('submit', function(e) {
+                                e.preventDefault();
+                                $('#input_loading').show();
+                                $('#input_email').prop('disabled',true);
+                                var email=$('#input_email').val();
+                                $.post("https://api.democratech.co/v2/auth/login",{'email':email})
+                                        .done(function(data){
+                                                window.location.href= data['redirect_url'];
+                                        })
+                                        .fail(function(data) {
+                                                console.log(data);
+                                                $('#input_pb').show();
+                                                $('#input_loading').hide();
+                                                $('#input_email').prop('disabled',false)
+                                        });
+                        })
+                }); 
+        }
 });
     </script>
     </body>
